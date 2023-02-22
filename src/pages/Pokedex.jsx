@@ -9,7 +9,7 @@ import { SelectTypes } from '../components/Pokedex/SelectTypes'
 export const Pokedex = () => {
   
     const { nameTrainer } = useSelector(state => state)
-  
+
     const [pokemons, setPokemons] = useState()
     const [selectValue, setSelectValue] = useState('allpokemons')
 

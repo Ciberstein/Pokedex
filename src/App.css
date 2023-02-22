@@ -738,7 +738,8 @@
 }
 
 
-.notFound__containter {
+.notFound__containter,
+.loading__containter {
     height: calc(100vh - var(--app-header-height));
     padding-top: var(--app-header-height);
     display: flex;
@@ -750,7 +751,8 @@
     flex-direction: column;
 }
 
-.notFound__containter > img {
+.notFound__containter > img,
+.loading__containter > img {
     max-width: 200px;
 }
 
