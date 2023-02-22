@@ -142,6 +142,7 @@
     width: 100%;
     background-image: url(https://i.pinimg.com/564x/98/c1/5a/98c15a449a1166ec23f5c9f1f63995dd.jpg);
     background-repeat: repeat;
+    min-height: calc(100vh - var(--app-header-height));
 }
 
 .pokedex__banner {
