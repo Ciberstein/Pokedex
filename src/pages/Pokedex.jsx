@@ -25,19 +25,19 @@ export const Pokedex = () => {
             const url = `https://pokeapi.co/api/v2/pokemon?limit=30&offset=0`
             axios.get(url)
             .then(res => {
-                dispatch(setIsLoading(false))
                 setPokemons(res.data)
             })
             .catch(err => console.log(err))
+            .finally(() =>  dispatch(setIsLoading(false)))
         }
         else {
             axios.get(selectValue)
             .then(res => {
-                dispatch(setIsLoading(false))
                 const results = res.data.pokemon.map(e => e.pokemon)
                 setPokemons({results})
             })
             .catch(err => console.log(err))
+            .finally(() =>  dispatch(setIsLoading(false)))
         }
     }, [selectValue])
 
