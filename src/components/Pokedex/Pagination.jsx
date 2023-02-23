@@ -15,13 +15,25 @@ export const Pagination = ({ pokePerPage, totalPokes, paginate, currentPage, set
     return (
         <nav>
             <ul className='pagination'>
-                {pageNumbers.map(number => (
-                    <li key={number} className='page-item'>
-                        <button className={`page-link ${ currentPage === number ? 'page-link-active' : '' }`} onClick={() => paginate(number)} >
-                            {number}
-                        </button>
-                    </li>
-                ))}
+                <li>
+                    <button className='page-link' onClick={() => paginate(currentPage - 1)}>
+                        <i className="fas fa-chevron-left"></i>
+                    </button>
+                </li>
+                {
+                    pageNumbers.map(number => (
+                        <li key={number} className='page-item'>
+                            <button className={`page-link ${ currentPage === number ? 'page-link-active' : '' }`} onClick={() => paginate(number)} >
+                                {number}
+                            </button>
+                        </li>
+                    ))
+                }
+                <li>
+                    <button className='page-link' onClick={() => paginate(currentPage + 1)}>
+                        <i className="fas fa-chevron-right"></i>
+                    </button>
+                </li>
                 <li>
                     <select className='page-link-select' onChange={handlePaginate}>
                         <option value='4'>4</option>

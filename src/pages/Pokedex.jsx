@@ -52,7 +52,12 @@ export const Pokedex = () => {
     const indexOfLastPost = currentPage * pokePerPage
     const indexOfFirstPost = indexOfLastPost - pokePerPage
     const currentPokes = pokemons?.results.slice(indexOfFirstPost, indexOfLastPost)
-    const paginate = pageNumber => setCurrentPage(pageNumber)
+    const paginate = pageNumber => {
+
+        const totalPages = Math.ceil(pokemons?.results.length / pokePerPage)
+
+        if(pageNumber >= 1 && pageNumber <= totalPages) setCurrentPage(pageNumber)
+    }
 
     return (
         <div className='pokedex__container'>
