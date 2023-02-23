@@ -764,17 +764,30 @@
 .pagination {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .page-link {
     width: 2.5rem;
     aspect-ratio: 1;
+    background-color: #df373e;
+}
+
+.page-link-select {
+    width: 4.5rem;
+    height: 2.5rem;
+    background-color: #df373e;
+}
+.page-link-select:focus-visible {
+    outline: none;
+}
+
+.page-link-select, .page-link {
+    font-family: 'Trispace', sans-serif;
     cursor: pointer;
     border: 3px solid black;
     border-radius: 10px;
     font-size: 20px;
-    font-family: 'Trispace', sans-serif;
-    background-color: #df373e;
 }
 
 .page-link-active {

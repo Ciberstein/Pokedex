@@ -16,7 +16,7 @@ export const Pokedex = () => {
     const [pokemons, setPokemons] = useState()
     const [selectValue, setSelectValue] = useState('allpokemons')
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokePerPage, setPokePerPage] = useState(10)
+    const [pokePerPage, setPokePerPage] = useState(8)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -70,7 +70,8 @@ export const Pokedex = () => {
                     pokePerPage={pokePerPage} 
                     totalPokes={pokemons?.results.length} 
                     paginate={paginate}   
-                    currentPage={currentPage}  
+                    currentPage={currentPage}
+                    setPokePerPage={setPokePerPage}
                 />
             </div>
             {
