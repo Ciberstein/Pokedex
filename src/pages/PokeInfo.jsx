@@ -4,16 +4,20 @@ import { useParams } from 'react-router-dom'
 import { PokeHeader } from '../components/Home/PokeHeader'
 import { Loading } from '../components/Screens/Loading'
 import { NotFound } from '../components/Screens/NotFound'
+import { useDispatch, useSelector } from 'react-redux'
+import { setIsLoading } from '../store/slices/isLoading.slice'
 
 export const PokeInfo = () => {
 
+    const { loadScreen } = useSelector(state => state)    
     const [hasError, setHasError] = useState(false)
     const { id } = useParams()
     const [poke, setPoke] = useState()
-    const [isLoading, setIsLoading] = useState(false)
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        setIsLoading(true)
+        dispatch(setIsLoading(true))
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`
         axios.get(url)
             .then(res => {
@@ -25,7 +29,7 @@ export const PokeInfo = () => {
                 console.log(err)
             })
             .finally(() => {
-                setIsLoading(false)
+                dispatch(setIsLoading(false))
             })
     }, [])
 
@@ -33,7 +37,7 @@ export const PokeInfo = () => {
         <div className='pokeInfo__container'>
             <PokeHeader />
             {
-                isLoading ?
+                loadScreen ?
                         <Loading />
                     :
                     hasError ? 

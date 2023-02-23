@@ -142,7 +142,7 @@
     width: 100%;
     background-image: url(https://i.pinimg.com/564x/98/c1/5a/98c15a449a1166ec23f5c9f1f63995dd.jpg);
     background-repeat: repeat;
-    min-height: calc(100vh - var(--app-header-height));
+    min-height: 100vh;
 }
 
 .pokedex__banner {
@@ -757,6 +757,22 @@
 .notFound__containter > img,
 .loading__containter > img {
     max-width: 200px;
+}
+
+.pagination {
+    display: flex;
+    gap: 1rem;
+}
+
+.page-link {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Trispace', sans-serif;
+    background-color: #df373e;
 }
 
 .li-15 > .StatChartList > li:nth-child(15) > div,
