@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Pagination = ({ pokePerPage, totalPokes, paginate }) => {
+export const Pagination = ({ pokePerPage, totalPokes, paginate, currentPage }) => {
 
     const pageNumbers = []
 
@@ -13,7 +13,7 @@ export const Pagination = ({ pokePerPage, totalPokes, paginate }) => {
             <ul className='pagination'>
                 {pageNumbers.map(number => (
                     <li key={number} className='page-item'>
-                        <button className='page-link' onClick={() => paginate(number)} >
+                        <button className={`page-link ${ currentPage === number ? 'page-link-active' : '' }`} onClick={() => paginate(number)} >
                             {number}
                         </button>
                     </li>

@@ -14,6 +14,8 @@ export const SelectTypes = ({ setSelectValue }) => {
 
     const handleChange = e => {
         setSelectValue(e.target.value)
+
+        console.log(pokeTypes)
     }
 
     return (

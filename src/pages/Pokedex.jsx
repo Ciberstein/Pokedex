@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { PokeHeader } from '../components/Home/PokeHeader'
 import { PokeCard } from '../components/Pokedex/PokeCard'
 import { SelectTypes } from '../components/Pokedex/SelectTypes'
-import { Pagination } from '../components/Pagination'
+import { Pagination } from '../components/Pokedex/Pagination'
 import { setIsLoading } from '../store/slices/isLoading.slice'
 import { Loading } from '../components/Screens/Loading'
 
@@ -16,7 +16,7 @@ export const Pokedex = () => {
     const [pokemons, setPokemons] = useState()
     const [selectValue, setSelectValue] = useState('allpokemons')
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokePerPage, setPokePerPage] = useState(8)
+    const [pokePerPage, setPokePerPage] = useState(10)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -57,37 +57,36 @@ export const Pokedex = () => {
     return (
         <div className='pokedex__container'>
             <PokeHeader />
+            <div className='pokedex__bannerPresent'>
+                <h1><span>Hi {nameTrainer}</span>, here find your favorite pokemon</h1>
+                <div className='pokedex__SearchFields'>
+                    <form onSubmit={handleSubmit} className='pokedex__searchForm'>
+                        <input id='pokemon' type='text' placeholder='Ex: Pikachu' autoComplete='off' />
+                        <button></button>
+                    </form>     
+                    <SelectTypes setSelectValue={setSelectValue} />
+                </div>
+                <Pagination 
+                    pokePerPage={pokePerPage} 
+                    totalPokes={pokemons?.results.length} 
+                    paginate={paginate}   
+                    currentPage={currentPage}  
+                />
+            </div>
             {
                 loadScreen ? 
                     <Loading />
                 :
-                    <>
-                        <div className='pokedex__bannerPresent'>
-                            <h1><span>Hi {nameTrainer}</span>, here find your favorite pokemon</h1>
-                            <div className='pokedex__SearchFields'>
-                                <form onSubmit={handleSubmit} className='pokedex__searchForm'>
-                                    <input id='pokemon' type='text' placeholder='Ex: Pikachu' autoComplete='off' />
-                                    <button></button>
-                                </form>     
-                                <SelectTypes setSelectValue={setSelectValue} />
-                            </div>
-                            <Pagination 
-                                pokePerPage={pokePerPage} 
-                                totalPokes={pokemons?.results.length} 
-                                paginate={paginate}     
+                <div className='pokedex__pokemon'>
+                    {
+                        currentPokes?.map(pokemon => (
+                            <PokeCard
+                                key={pokemon.url}
+                                pokemon={pokemon}
                             />
-                        </div>
-                        <div className='pokedex__pokemon'>
-                            {
-                                currentPokes?.map(pokemon => (
-                                    <PokeCard
-                                        key={pokemon.url}
-                                        pokemon={pokemon}
-                                    />
-                                ))
-                            }
-                        </div>
-                    </>
+                        ))
+                    }
+                </div>
             }
         </div>
     )

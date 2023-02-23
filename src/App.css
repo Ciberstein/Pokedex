@@ -775,6 +775,10 @@
     background-color: #df373e;
 }
 
+.page-link-active {
+    background-color: #fff ;
+}
+
 .li-15 > .StatChartList > li:nth-child(15) > div,
 .li-15 > .StatChartList > li:nth-child(14) > div,
 .li-15 > .StatChartList > li:nth-child(13) > div,
