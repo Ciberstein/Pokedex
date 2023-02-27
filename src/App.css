@@ -17,6 +17,11 @@
 
 .main__header > img {
     cursor: pointer;
+    transition: transform 300ms ease;
+}
+
+.main__header > img:hover { 
+    transform: scale(1.1);
 }
 
 .App {
