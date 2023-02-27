@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Pagination = ({ pokePerPage, totalPokes, paginate, currentPage, setPokePerPage }) => {
+export const Pagination = ({ pokePerPage, totalPokes, paginate, currentPage, setCurrentPage, setPokePerPage }) => {
 
     const pageNumbers = []
 
@@ -10,6 +10,7 @@ export const Pagination = ({ pokePerPage, totalPokes, paginate, currentPage, set
 
     const handlePaginate = e => {
         setPokePerPage(e.target.value)
+        setCurrentPage(1)
     }
 
     return (

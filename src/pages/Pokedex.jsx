@@ -76,6 +76,7 @@ export const Pokedex = () => {
                     totalPokes={pokemons?.results.length} 
                     paginate={paginate}   
                     currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
                     setPokePerPage={setPokePerPage}
                 />
             </div>

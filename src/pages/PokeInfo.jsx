@@ -33,6 +33,8 @@ export const PokeInfo = () => {
             })
     }, [])
 
+    console.log(poke)
+
     return (
         <div className='pokeInfo__container'>
             <PokeHeader />
