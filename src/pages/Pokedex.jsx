@@ -69,7 +69,10 @@ export const Pokedex = () => {
                         <input id='pokemon' type='text' placeholder='Ex: Pikachu' autoComplete='off' />
                         <button></button>
                     </form>     
-                    <SelectTypes setSelectValue={setSelectValue} />
+                    <SelectTypes 
+                        setSelectValue={setSelectValue}
+                        setCurrentPage={setCurrentPage}
+                    />
                 </div>
                 <Pagination 
                     pokePerPage={pokePerPage} 

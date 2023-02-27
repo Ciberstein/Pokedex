@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-export const SelectTypes = ({ setSelectValue }) => {
+export const SelectTypes = ({ setSelectValue, setCurrentPage }) => {
 
     const [pokeTypes, setPokeTypes] = useState()
 
@@ -14,6 +14,7 @@ export const SelectTypes = ({ setSelectValue }) => {
 
     const handleChange = e => {
         setSelectValue(e.target.value)
+        setCurrentPage(1)
         console.log(pokeTypes)
     }
 
