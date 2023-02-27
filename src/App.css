@@ -97,6 +97,10 @@
     max-width: 70%;
 }
 
+.pokedex__searchForm {
+    max-width: 100% !important;
+}
+
 .app__main > form > button,
 .pokedex__bannerPresent > .pokedex__SearchFields> form > button {
     cursor: pointer;
@@ -119,6 +123,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 } 
 
 .SelectTypes {
@@ -794,7 +799,7 @@
     background-color: #fff ;
 }
 
-.li-15 > .StatChartList > li:nth-child(15) > div,
+.li-15 > .StatChartLiearcht > li:nth-child(15) > div,
 .li-15 > .StatChartList > li:nth-child(14) > div,
 .li-15 > .StatChartList > li:nth-child(13) > div,
 .li-15 > .StatChartList > li:nth-child(12) > div,
