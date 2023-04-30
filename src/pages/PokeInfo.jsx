@@ -6,6 +6,7 @@ import { Loading } from '../components/Screens/Loading'
 import { NotFound } from '../components/Screens/NotFound'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from '../store/slices/isLoading.slice'
+import { PokeFooter } from '../components/Home/PokeFooter'
 
 export const PokeInfo = () => {
 
@@ -136,6 +137,7 @@ export const PokeInfo = () => {
                             </div>                    
                         </div>
             }
+            <PokeFooter />
         </div>
     )
 }

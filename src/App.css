@@ -142,10 +142,27 @@
 .app__footer {
     width: 100%;
     height: var(--app-footer-height);
-    background-image: url(https://seller.tcgplayer.com/media/2483/pokemon_play_pokemon_banner-02-2x.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app__footer__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app__social__icon {
+    max-width: 4rem;
+    transition: max-width 300ms ease;
+}
+
+.app__social__icon:hover {
+    max-width: 5rem;
 }
 
 .pokedex__container {

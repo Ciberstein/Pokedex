@@ -8,6 +8,7 @@ import { SelectTypes } from '../components/Pokedex/SelectTypes'
 import { Pagination } from '../components/Pokedex/Pagination'
 import { setIsLoading } from '../store/slices/isLoading.slice'
 import { Loading } from '../components/Screens/Loading'
+import { PokeFooter } from '../components/Home/PokeFooter'
 
 export const Pokedex = () => {
   
@@ -98,6 +99,7 @@ export const Pokedex = () => {
                     }
                 </div>
             }
+            <PokeFooter />
         </div>
     )
 }
