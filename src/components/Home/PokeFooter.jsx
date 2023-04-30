@@ -9,7 +9,10 @@ export const PokeFooter = () => {
         </a>
         <a href='https://www.linkedin.com/in/cyberstein/' target='_blank'>
           <img src='./linkedin.png' className='app__social__icon' />
-        </a>        
+        </a>
+        <a href='https://discordapp.com/users/406923874450800641' target='_blank'>
+          <img src='./discord.png' className='app__social__icon' />
+        </a>     
       </div>
     </footer>
   )
