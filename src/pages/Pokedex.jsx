@@ -88,18 +88,20 @@ export const Pokedex = () => {
                 loadScreen ? 
                     <Loading />
                 :
-                <div className='pokedex__pokemon'>
-                    {
-                        currentPokes?.map(pokemon => (
-                            <PokeCard
-                                key={pokemon.url}
-                                pokemon={pokemon}
-                            />
-                        ))
-                    }
-                </div>
+                <>
+                    <div className='pokedex__pokemon'>
+                        {
+                            currentPokes?.map(pokemon => (
+                                <PokeCard
+                                    key={pokemon.url}
+                                    pokemon={pokemon}
+                                />
+                            ))
+                        }
+                    </div>
+                    <PokeFooter />
+                </>
             }
-            <PokeFooter />
         </div>
     )
 }
