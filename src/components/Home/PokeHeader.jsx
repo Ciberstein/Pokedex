@@ -11,7 +11,7 @@ export const PokeHeader = () => {
 
   return (
     <header className='main__header' onClick={handleClick}>
-        <img src='/pokedex.png' />
+        <img src='/pokedex.png' alt='Pokedex' />
     </header>
   )
 }

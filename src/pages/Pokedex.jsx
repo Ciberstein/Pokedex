@@ -12,8 +12,8 @@ import { PokeFooter } from '../components/Home/PokeFooter'
 
 export const Pokedex = () => {
   
-    const { nameTrainer } = useSelector(state => state)
-    const { loadScreen } = useSelector(state => state)    
+    const nameTrainer = useSelector(state => state.nameTrainer)
+    const loadScreen = useSelector(state => state.loadScreen)
     const [pokemons, setPokemons] = useState()
     const [selectValue, setSelectValue] = useState('allpokemons')
     const [currentPage, setCurrentPage] = useState(1)
@@ -40,7 +40,7 @@ export const Pokedex = () => {
             .catch(err => console.log(err))
             .finally(() =>  dispatch(setIsLoading(false)))
         }
-    }, [selectValue])
+    }, [selectValue, dispatch])
 
     const navigate = useNavigate()
     const handleSubmit = e => {

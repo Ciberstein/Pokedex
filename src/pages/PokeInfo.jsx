@@ -10,7 +10,7 @@ import { PokeFooter } from '../components/Home/PokeFooter'
 
 export const PokeInfo = () => {
 
-    const { loadScreen } = useSelector(state => state)    
+    const loadScreen = useSelector(state => state.loadScreen)
     const [hasError, setHasError] = useState(false)
     const { id } = useParams()
     const [poke, setPoke] = useState()
@@ -32,9 +32,7 @@ export const PokeInfo = () => {
             .finally(() => {
                 dispatch(setIsLoading(false))
             })
-    }, [])
-
-    console.log(poke)
+    }, [id, dispatch])
 
     return (
         <div className='pokeInfo__container'>
@@ -59,7 +57,7 @@ export const PokeInfo = () => {
                                     </header>
                                     <div className='pokeInfo__leftBody'>
                                         <div className='pokeInfo__img'>
-                                            <img className={poke?.types[0].type.name} src={poke?.sprites.other['official-artwork'].front_default} />
+                                            <img className={poke?.types[0].type.name} src={poke?.sprites.other['official-artwork'].front_default} alt={poke?.name} />
                                         </div>
                                         <div className='pokecard__desc'>
                                             <h1>{poke?.name}</h1>

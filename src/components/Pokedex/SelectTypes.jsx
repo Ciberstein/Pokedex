@@ -15,11 +15,10 @@ export const SelectTypes = ({ setSelectValue, setCurrentPage }) => {
     const handleChange = e => {
         setSelectValue(e.target.value)
         setCurrentPage(1)
-        console.log(pokeTypes)
     }
 
     return (
-        <select onChange={handleChange} className='SelectTypes'>
+        <select onChange={handleChange} className='SelectTypes' aria-label='Filter by type'>
             <option value='allpokemons'>All Pokemons</option>
             {
                 pokeTypes?.results.map(pokeType =>(

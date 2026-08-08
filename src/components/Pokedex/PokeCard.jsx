@@ -10,7 +10,7 @@ export const PokeCard = ({ pokemon }) => {
         axios.get(pokemon.url)
             .then(res => setPoke(res.data))
             .catch(err => console.log(err))
-    }, [])
+    }, [pokemon.url])
 
     const navigate = useNavigate()
 
@@ -26,7 +26,7 @@ export const PokeCard = ({ pokemon }) => {
                     <h6>CYBERSTEIN</h6>                    
                 </div>
                 <div className='pokecard__icon'>
-                    <img src='/pokeball.png' />
+                    <img src='/pokeball.png' alt='' />
                 </div>
             </header>
             <div className='pokecard__img'>

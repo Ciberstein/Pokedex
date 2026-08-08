@@ -22,7 +22,7 @@ export const Home = () => {
                 <source src="/bg_animated.mp4" type="video/mp4" />
             </video>
             <div className='app__main'>
-                <img src='/pokedex.png' className='pokedex__banner' />
+                <img src='/pokedex.png' className='pokedex__banner' alt='Pokedex' />
                 <div className='app__presentation'>
                     <h1>Hi trainer!</h1> 
                     <p>Give me your name to start</p>            
